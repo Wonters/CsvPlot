@@ -9,12 +9,13 @@ import string
 
 
 print("Entrée le chemin absolue du fichier csv à ploter ")
-PathCsv =sys.stdin.readline()
-PathCsv = PathCsv.replace("\n","")
-with open(PathCsv) as csvfile:
+PathCsv ='test.csv' #sys.stdin.readline()
+#PathCsv = PathCsv.replace("\n","")
+with open(PathCsv, newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     print("fichier csv chargé", PathCsv)
-    print("Contenu", reader)
     for row in reader:
-        print(row)
+        print(row['Y'],row['X'])
+        
+        
 
